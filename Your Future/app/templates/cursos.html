@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Cursos{% endblock %}
+{% block content %}
+<html> 
+    <head>
+        <style>
+            .botao{
+            background-color: #ed7c31;
+            color: #f8f9fa;
+            border-radius: 10px;
+            padding: 10px 25px;
+            border: none;
+            }
+            .botao:hover{
+            background-color: #f4bb3a;
+            text-decoration: none;
+            display: inline-block;
+            color: #f8f9fa;
+            }
+            
+        </style>
+    </head>
+    <body>
+<div class="container mt-4">
+    <div class="courses">
+        <h3 class="mb-4">Cursos Disponíveis</h3>
+        <div class="row">
+            {% for curso in cursos %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title"><strong>{{ curso.nome }}</strong></h3> 
+                            <center>
+                            <img src="/media/{{ curso.foto }}" width="180px" class="foto">
+                            </center>
+                            
+                            <strong><p class="card-text" > Autor: </strong>{{ curso.autor }}</p>
+                            <strong><p class="card-text">Duração: </strong>{{ curso.duracao }} horas</p>
+                            <strong><p class="card-text">Preço:  </strong>R$ {{ curso.preco }}</p>
+                            <strong><p class="card-text">Estoque: </strong>{{ curso.quantidade_estoque }}</p>
+                            <br>
+                            <center>
+                            <a href="{% url 'comprar_curso' curso.id %}" class="botao">Comprar</a>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-md-12">
+                    <p class="text-center">Nenhum curso disponível no momento.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}

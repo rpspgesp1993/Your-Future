@@ -1,0 +1,170 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+
+main {
+  flex: 1;
+  margin-top: 0;
+}
+
+.img-fluid {
+  width: auto;
+  /* largura desejada */
+  height: auto;
+  /* ajusta a altura automaticamente */
+}
+
+
+
+
+.alert {
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-top: 10px;
+}
+
+footer {
+  background-color: #a3a3a3;
+  text-align: center;
+  padding: 30px;
+  width: 100%;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  margin-top: 10px;
+}
+
+.footer-columns ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-columns li {
+  margin: 5px 0;
+}
+
+.nav-buttom {
+  background-color: #ed7c31;
+  color: #f8f9fa;
+  border-radius: 10px;
+  padding: 10px 25px;
+  border: none;
+}
+
+.nav-buttom:hover {
+  background-color: #f4bb3a;
+  text-decoration: none;
+  display: inline-block;
+  color: #f8f9fa;
+}
+
+.custom-font {
+  font-family: 'arial';
+  font-weight: bold;
+
+
+  font-size: 35px;
+}
+
+
+
+
+.footer-columns a {
+  color: #494949;
+  font-size: 12px;
+}
+
+.footer-columns a:hover {
+  color: #f4bb3a;
+  text-decoration: none;
+  display: inline-block;
+}
+
+h1 {
+  font-weight: 600;
+  color: #333;
+  font-size: 39px !important;
+}
+
+h4 {
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px !important;
+}
+
+.button {
+  background-color: #ed7c31;
+  color: #FFF;
+  padding: 10px;
+  font-size: 22px;
+  font-family: 'Arial';
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button:hover {
+  background-color: #f4bb3a;
+  text-decoration: none;
+  color: #FFF;
+}
+
+.custom-btn {
+  background-color: #f4bb3a;
+  border-color: #f4bb3a;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.custom-btn:hover {
+  background-color: #f4bb3a;
+  border: none;
+  color: #f8f9fa;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #ddd;
+}

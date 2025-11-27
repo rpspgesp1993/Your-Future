@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Relatório de Vendas{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h3>Relatório de Vendas Mensais</h3>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h4>Vendas Gerais</h4>
+                <img src="data:image/png;base64,{{ img_gerais }}" alt="Gráfico de Vendas Gerais" class="img-fluid">
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h4>Vendas por Curso</h4>
+                <img src="data:image/png;base64,{{ img_curso }}" alt="Gráfico de Vendas por Curso" class="img-fluid">
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Digitalize{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Contato</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .form-container, .contact-info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .form-container h2, .contact-info h2 {
+            color: #333;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        textarea {
+            height: 150px;
+        }
+        button {
+            background-color: #ed7c31;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #f4bb3a;
+        }
+        .contact-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .contact-info li {
+            margin: 10px 0;
+        }
+        .contact-info a {
+            color: #ed7c31;
+            text-decoration: none;
+        }
+    
+    </style>
+</head>
+<body>
+    <br>
+
+    <div class="container">
+        <!-- Formulário de Contato -->
+        <div class="form-container">
+            <h2>Envie uma Mensagem</h2>
+            <form action="#" method="POST">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required placeholder="Seu nome completo">
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required placeholder="Seu e-mail">
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required placeholder="Sua mensagem"></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <!-- Outros Meios de Contato -->
+        <div class="contact-info">
+            <h2>Outros Meios de Contato</h2>
+            <ul>
+                <li><strong>E-mail:</strong> <a href="mailto:contato@empresa.com">contato@empresa.com</a></li>
+                <li><strong>Telefone:</strong> <a href="tel:+5511999999999">(11) 99999-9999</a></li>
+                <li><strong>Endereço:</strong> Rua Exemplo, 123, São Paulo, SP</li>
+                <li><strong>Redes Sociais:</strong>
+                    <a href="https://facebook.com/empresa" target="_blank">Facebook</a> |
+                    <a href="https://twitter.com/empresa" target="_blank">Twitter</a> |
+                    <a href="https://instagram.com/empresa" target="_blank">Instagram</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{%block main%}
+
+<div class = "container col-6 mt-5">
+    <h1>Editar Usuario</h1> <br>
+<form method= "post">
+    {% csrf_token%}
+    {{form}}
+    <br><br><br><br>
+    <h1>Editar Usuario</h1> <br>
+    <input type="subimit" value="Atualizar" class="btn btn-warning">
+</form>
+
+</div>
+{% endblock %}

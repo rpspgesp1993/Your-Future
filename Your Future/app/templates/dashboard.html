@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Usuário</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .menu img {
+            cursor: pointer; /* Indica que a imagem é clicável */
+            width: 88px; /* Tamanho da imagem */
+            height: 88px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'index' %}">Minha Conta</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                
+                
+                <li class="nav-item">
+                    <a class="button" href="{% url 'logout' %}" role="button">Sair</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+
+
+
+
+
+
+
+
+    <div class="container mt-5">
+    <div class="usuariosDash">
+        {%for user in dados %}
+
+            {%for g in dados%}
+                <img src="/media/{{g.foto}}" alt="descrição da imagem" class="perfil" onclick="toggleMenu()" width="200px">
+            {%endfor%}
+
+             <td><H3>{{ user.nome }}</H3></td>
+             <td><p><strong> Email: </strong>{{ user.email }}</p></td>
+             <a href = "{% url 'excluir_usuario' user.id %}" class="btn btn-warning">Excluir Conta</a>
+             <a href = "{% url 'add_foto' %}" class="btn btn-warning">Inserir foto</a>
+             <a href = "{% url 'redefinir_senha' %}" class="btn btn-warning">Alterar senha</a>
+             <br>
+         {% endfor %}   
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

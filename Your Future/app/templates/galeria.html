@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Galeria{% endblock %}
+{% block content %}
+<style>
+    .card-img-top { 
+        width: 250px; /* Tamanho fixo para a imagem */
+        height: 300px; /* Tamanho fixo para a imagem */
+        object-fit: cover; /* Garante que a imagem cubra a área sem distorção */
+         /* Torna a imagem redonda */
+        margin: 0 auto; /* Centraliza a imagem dentro do card */
+    }
+  </style>
+  <br>
+  <h2>Fotos adicionadas pelo "add-foto"</h2>
+  <br>
+  <div class="row row-cols-1 row-cols-md-5 g-4 ">
+      {% if usuarios_fotos %}
+          {% for usuario in usuarios_fotos %}
+          <div class="col">
+           
+                  <img src="/media/{{ usuario.foto }}" class="card-img-top" alt="Foto do Usuário" >
+                  <div class="card-body">
+                      <center><h5 class="card-title">{{ usuario.nome }}</h5></center>
+                  </div>
+            
+          </div>
+          {% endfor %}
+      {% else %}
+          <p>Nenhuma foto de usuário disponível.</p>
+      {% endif %}
+  </div>
+  
+  <br>
+  <h2>Fotos de Usuarios</h2>
+  <br>
+  <div class="row row-cols-1 row-cols-md-5 g-4">
+      {% if cursos_fotos %}
+          {% for curso in cursos_fotos %}
+          <div class="col">
+              
+                  <img src="/media/{{ curso.foto }}" class="card-img-top" alt="Foto do Curso">
+                  <div class="card-body">
+                      <h5 class="card-title">{{ curso.nome }}</h5>
+                  </div>
+          </div>
+          {% endfor %}
+      {% else %}
+          <p>Nenhuma foto de curso disponível.</p>
+      {% endif %}
+  </div>
+  
+  <br>
+  <h2  style=>Fotos Adicionadas no Curso</h2>
+  <br>
+  <div class="row row-cols-1 row-cols-md-5 g-4">
+      {% if fotos_fotos %}
+          {% for foto in fotos_fotos %}
+          <div class="col">
+              <img src="/media/{{ foto.foto }}" class="card-img-top" alt="Foto Adicionada">
+                  <div class="card-body">
+                      <h5 class="card-title">{{ foto.nome }}</h5>
+                  </div>
+              
+          </div>
+          {% endfor %}
+      {% else %}
+          <p>Nenhuma foto adicional disponível.</p>
+      {% endif %}
+  </div>
+  
+  {% endblock %}

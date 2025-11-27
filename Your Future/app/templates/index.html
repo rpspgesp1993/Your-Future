@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Digitalize{% endblock %}
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{% static 'img/fundo.png' %}" alt="Imagem de exemplo" class="img-fluid">
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+            <h1 class="titulo" style="color:#ed7c31;">
+                Your<span style="color: #f4bb3a;">Future</span></h1>
+            <h4 class="lead">Descubra o site de cursos que vai turbinar suas habilidades! Acesse agora e mergulhe em uma variedade de cursos que cabem no seu ritmo. Aprenda algo novo hoje!.</h4>
+            <hr class="my-4">
+            <a class="button" href="{% url 'cadastrar_user'  %}" role="button">Cadastre-se</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

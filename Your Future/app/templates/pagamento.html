@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas de Pagamento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            text-align: center;
+        }
+        .payment-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .payment-form label {
+            font-size: 16px;
+            margin: 10px 0;
+            display: block;
+        }
+        .payment-form input[type="text"],
+        .payment-form input[type="email"],
+        .payment-form input[type="number"],
+        .payment-form select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .payment-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .payment-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Escolha a Forma de Pagamento</h2>
+
+    <div class="payment-form">
+        <form action="#" method="POST">
+            <!-- Nome do Titular -->
+            <label for="nome">Nome do Titular</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite o nome do titular" required>
+
+            <!-- E-mail -->
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+            <!-- Forma de Pagamento -->
+            <label for="pagamento">Forma de Pagamento</label>
+            <select id="pagamento" name="pagamento" required>
+                <option value="" disabled selected>Escolha uma opção</option>
+                <option value="cartao_credito">Cartão de Crédito</option>
+                <option value="boleto">Boleto Bancário</option>
+                <option value="transferencia">Transferência Bancária</option>
+            </select>
+
+            <!-- Detalhes do Cartão de Crédito (Aparece se a opção for Cartão de Crédito) -->
+            <div id="cartao_credito" style="display: none;">
+                <label for="numero_cartao">Número do Cartão</label>
+                <input type="number" id="numero_cartao" name="numero_cartao" placeholder="Número do Cartão" pattern="\d{16}" maxlength="16">
+
+                <label for="vencimento">Data de Vencimento</label>
+                <input type="text" id="vencimento" name="vencimento" placeholder="MM/AAAA" pattern="\d{2}/\d{4}" maxlength="7">
+
+                <label for="codigo_seguranca">Código de Segurança</label>
+                <input type="number" id="codigo_seguranca" name="codigo_seguranca" placeholder="Código de Segurança" maxlength="3" pattern="\d{3}">
+            </div>
+
+            <!-- Detalhes do Boleto Bancário (Aparece se a opção for Boleto) -->
+            <div id="boleto" style="display: none;">
+                <label for="cpf_boleto">CPF</label>
+                <input type="number" id="cpf_boleto" name="cpf_boleto" placeholder="Digite seu CPF" maxlength="11">
+            </div>
+
+            <!-- Detalhes da Transferência Bancária (Aparece se a opção for Transferência) -->
+            <div id="transferencia" style="display: none;">
+                <label for="banco">Banco</label>
+                <input type="text" id="banco" name="banco" placeholder="Digite o nome do banco">
+
+                <label for="agencia">Agência</label>
+                <input type="text" id="agencia" name="agencia" placeholder="Digite o número da agência">
+
+                <label for="conta">Número da Conta</label>
+                <input type="number" id="conta" name="conta" placeholder="Digite o número da conta">
+            </div>
+
+            <button type="submit">Confirmar Pagamento</button>
+        </form>
+    </div>
+
+    
+</body>
+</html>

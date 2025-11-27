@@ -1,0 +1,18 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div class="container col-md-6 mt-4" style="padding-bottom: 30px;">
+    <h1 class="text-center">Enviar foto</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="nav-buttom mt-3 w-100">Enviar</button>
+    </form>
+
+</div>
+
+{% endblock %}
